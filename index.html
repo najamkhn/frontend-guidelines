@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>Frontend Guidelines</title>
+                <link rel="stylesheet" href="css/main.css">
+                <link rel="stylesheet" href="css/prism.css">
+        </head>
+        <body>
+        <div id="warning" class="transparent">
+            <span>
+                Hey, Listen! This presentation works THE BEST in Webkit/Blink browsersonly. Sorry about that. Pull requests welcome?
+            </span>
+        </div>
+        
+        <article>
+            <section data-bespoke-state="intro" class="intro">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy"></div>
+                    </div>
+                    <h1>Frontend Guidelines</h1>
+                    <div class="byline">
+                        <div class="classy">
+                            by Najam Khan
+                        </div>
+                    </div>
+                    <img src="img/mee.jpeg" class="mee" />
+                    <span>@njmkhn</span>
+                </div>
+            </section>
+
+            <section data-bespoke-state="lahore" class="lahore">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            So kicking off with
+                        </div>
+                    </div>
+                    <h3>CSS Guidelines</h3>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+            <section class="intermediate">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            CSS Guidelines #didyouknow
+                        </div>
+                    </div>
+                    <h3>Minimize use of floats</h3>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+            <section class="didyouknow" data-bespoke-state="didyouknow">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            CSS Guidelines #didyouknow
+                        </div>
+                    </div>
+                    <h3>IDs are useless, don't use them</h3>
+                    <div class="byline">
+                        <div class="classy">
+                            Use multiple classes, data-attribs etc.
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            CSS Guidelines
+                        </div>
+                    </div>
+                    <h3>Avoid nesting, try writing flat CSS</h3>
+                    <br />
+                    <ul class="fake-list full-length">
+                        <li class="worst"> #classified-detail-include-p .content-wrapper ul .first .link</li>
+                        <li class="worst"> #classified-listing-body #results-list .hover .watchlist .details-watch-this</li> 
+                        <li class="worst"> #place-an-ad-details-body #agent-div, #place-an-ad-details-body .lister-border</li>
+                        <li class="better"> #classified-detail-include .content-wrapper .report-an-ad-link </li>
+                        <li class="better"> #classified-detail-include-p .content-wrapper .link </li>
+                        <li class="best"> .content .btn-reset </li>
+                        <li class="best"> .textbox </li>
+                        <li class="best"> .btn-submit </li>
+                    </ul>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+            <section class="">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            and how about some
+                        </div>
+                    </div>
+                    <h3>Javascript Guidelines</h3>
+                    <br />
+                    <span></span>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+            <!-- <section class="wonder"></section> -->
+
+            <section class="">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            Javascript Guidelines
+                        </div>
+                    </div>
+                    <h3>Avoid Globals</h3>
+                    <span>Use a namespace.</span>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+            <section class="globals">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            Javascript Guidelines : global count
+                        </div>
+                    </div>
+                    <ul class="fakelist">
+                        <li>Twitter.com - 19</li>
+                        <li>Facebook.com - 107</li>
+                        <li>Github.com - 28</li>
+                        <li>Dubizzle.com - 345</li>
+                    </ul>
+                    <br />
+                    <small><small>via: <a href="https://github.com/kangax/detect-global">https://github.com/kangax/detect-global</a></small></small>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+            <section class="">
+                <div class="content">
+                    <code>
+                        "use strict"
+                    </code>
+                </div>
+            </section>
+
+            <section class="strict-mode" data-bespoke-state="strictmode">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            Javascript Guidelines: Strict Mode
+                        </div>
+                    </div>
+                    <div class="codeblocks">
+                        <pre class=""><code class="language-javascript">
+function foo() {
+        bar = Math.floor(10.9);
+}
+foo();
+console.log(bar);
+                            </code>
+                        </pre>
+                        <h3>STRICT MODE</h3>
+                        <pre class=""><code class="language-javascript">
+"use strict";
+function foo() {
+        bar = Math.floor(10.9);
+}
+foo();
+console.log(bar); // BOOM!
+                        </code>
+                        </pre>
+                        <comment>ReferenceError: bar is not defined</comment>
+                    </div>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+            <section class="">
+                <div class="content">
+                    <h3>..but dont use <code>"use strict"</code> globally</h3>
+                </div>
+            </section>
+
+            <section class="strict-mode">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            Javascript Guidelines: Strict mode examples
+                        </div>
+                    </div>
+                    <div class="codeblocks">
+                        <pre class=""><code class="language-javascript">
+function foo() {
+    "use strict"
+    var bar = Math.floor(10.9);
+    return bar;
+}
+var value = foo();
+console.log(value);
+
+                            </code>
+                        </pre>
+                        <h4>OR better use IIFE</h4>
+                        <pre class=""><code class="language-javascript">
+// IIFE 
+(function() {
+    "use strict"
+    
+    var floor = function(value) {
+        return Math.floor(value);
+    };
+
+    console.log(floor(10.9));
+
+})();
+                        </code>
+                        </pre>
+                    </div>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+            <section class="strict-mode">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            Javascript Guidelines : IIFE
+                        </div>
+                    </div>
+                    <div class="codeblocks">
+                        <pre class=""><code class="language-javascript">
+  (function(){ /* code */ }()); // Crockford recommends this one
+  (function(){ /* code */ })(); // But this one works just as well
+                        </code>
+                        </pre>
+                    <br />
+                    <div class="byline">
+                        <div class="classy">
+                            I prefer the later one
+                        </div>                        
+                    </div>
+                </div>
+            </section>
+
+            <section class="">  
+                <div class="content">
+                    <h3>SO THIS IS HOW I PREFER MY JAVASCRIPT</h3>
+                </div>
+            </section>
+
+            <section class="">
+                <div class="content">
+                    <pre>
+                        <code class="language-javascript">
+(function(self) {
+  self.fooBar = {
+    init: function() {
+      // This is where you initialize all your functions
+      console.log("this is the first module");
+      return true;
+
+    },
+    events: function() {
+      // This is where you should be mapping your functions to events
+      console.log("these are the events we call");
+      return true;
+    }
+  };
+})(this._namespace = this._namespace || {});
+                        
+                        </code>
+                    </pre>
+                    <ul class="ul">
+                        <li>Every function should have a <code>init</code> and <code>events</code> function.</li> 
+                        <li>All modules need to be namespaced into a global object to avoid naming conflicts.</li> 
+                    </ul>
+                </div>
+            </section>
+
+            <section data-bespoke-state="workflow" class="workflow">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            so FINALLY!
+                        </div>
+                    </div>
+                    <h3>Frontend workflow</h3>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            Frontend workflow
+                        </div>
+                    </div>
+                    <img src="img/mine/grunt-logo.png">
+                    <h3>GruntJS</h3>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            Yes its that badass
+                        </div>
+                    </div>
+                    <h3>Most active community of plugins for frontend development</h3>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
+            <section>
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            How Gruntfile looks like
+                        </div>
+                    </div>
+                    <pre>
+                        <code class="language-javascript">
+# Project configuration.
+grunt.initConfig
+  pkg: grunt.file.readJSON("package.json")
+  uglify:
+    options:
+      banner: "/*! <%= pkg.name %> */\n"
+
+    build:
+      src: "src/<%= pkg.name %>.js"
+      dest: "build/<%= pkg.name %>.min.js"
+
+
+                        </code>
+                    </pre>
+                    <div class="byline">
+                        <div class="classy">
+                            PS. actually this is in <code>coffeescript.</code> 
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section>
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            Coffescript
+                        </div>
+                    </div>
+                    <pre>
+                        <code class="language-javascript">
+((self) ->
+  class modulName
+    init: ->
+      console.log "this is the first module"
+
+    events: ->
+      console.log "these are the events we call"
+
+  self.moduleName = modulName
+  return
+) @_namespace = @_namespace or {}
+                        </code>
+                    </pre>
+                    <div class="byline">
+                        <div class="classy">
+                            media/scripts/moduleName.coffee
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <section data-bespoke-state="final" class="intro">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            This has been
+                        </div>
+                    </div>
+                    <h1>Frontend Guidelines</h1>
+                    <div class="byline">
+                        <div class="classy">
+                            by Najam Khan
+                        </div>
+                    </div>
+                    <span>Thank you for listening.</span>
+                    <img src="img/mine/dance.gif" />
+                </div>
+            </section>
+
+        </article>
+        <script type="text/javascript">
+            WebFontConfig = {
+                google: { families: [ 'Tauri::latin', 'Alegreya:400italic:latin' ] }
+            };
+            (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })(); 
+        </script>
+        <script src="js/bespoke.js"></script>
+        <script src="js/deck.js"></script>
+        <script src="js/prism.js"></script>
+        </body>
+</html>
