@@ -59,7 +59,7 @@ article.intro::before {
 }
 
 article.lahore::before {
-  background-image: url("../img/mine/intro.gif");
+  background-image: url("../img/intro.gif");
 }
 
 article.steamclock::before {
@@ -488,7 +488,7 @@ article.didyouknow::before, article.didyouknow::after {
 }
 
 article.workflow::before, article.workflow::after {
-  background-image: url('../img/mine/workflow.gif');
+  background-image: url('../img/workflow.gif');
   background-repeat: no-repeat;
   background-size: 100%;
 }

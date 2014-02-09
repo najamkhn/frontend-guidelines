@@ -159,7 +159,7 @@
                     <div class="codeblocks">
                         <pre class=""><code class="language-javascript">
 function foo() {
-        bar = Math.floor(10.9);
+    bar = Math.floor(10.9);
 }
 foo();
 console.log(bar);
@@ -169,7 +169,7 @@ console.log(bar);
                         <pre class=""><code class="language-javascript">
 "use strict";
 function foo() {
-        bar = Math.floor(10.9);
+    bar = Math.floor(10.9);
 }
 foo();
 console.log(bar); // BOOM!
@@ -180,6 +180,37 @@ console.log(bar); // BOOM!
                     <div class="unbrokenline"></div>
                 </div>
             </section>
+
+            <section class="strict-mode" data-bespoke-state="strictmode">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            Javascript Guidelines: Strict Mode
+                        </div>
+                    </div>
+                    <div class="codeblocks">
+                        <pre class=""><code class="language-javascript">
+"use strict";
+if (true){
+  function f() { } // !!! syntax error
+  f();
+}
+                            </code>
+                        </pre>
+                        <comment>^ SyntaxError: In strict mode code, functions can only be declared at top level or immediately within another function.</comment>
+                        <br /><br />
+                        <pre class=""><code class="language-javascript">
+"use strict";
+function foo(){ // kosher
+  function bar() { } // also kosher
+}
+                        </code>
+                        </pre>
+                    </div>
+                    <div class="unbrokenline"></div>
+                </div>
+            </section>
+
 
             <section class="">
                 <div class="content">
@@ -203,7 +234,6 @@ function foo() {
 }
 var value = foo();
 console.log(value);
-
                             </code>
                         </pre>
                         <h4>OR better use IIFE</h4>
@@ -248,6 +278,30 @@ console.log(value);
                 </div>
             </section>
 
+            <section class="strict-mode">
+                <div class="content">
+                    <div class="byline">
+                        <div class="classy">
+                            Javascript Guidelines : IIFE
+                        </div>
+                    </div>
+                    <div class="codeblocks">
+                        <pre class=""><code class="language-javascript">
+// IIFE with jQuery
+(function(window, document, $, undefined) {
+    "use strict"
+    
+    var floor = function(value) {
+        return Math.floor(value);
+    };
+    console.log(floor(10.9));
+    
+})(this, this.document, jQuery);
+                        </code>
+                        </pre>
+                </div>
+            </section>
+
             <section class="">  
                 <div class="content">
                     <h3>SO THIS IS HOW I PREFER MY JAVASCRIPT</h3>
@@ -273,7 +327,6 @@ console.log(value);
     }
   };
 })(this._namespace = this._namespace || {});
-                        
                         </code>
                     </pre>
                     <ul class="ul">
@@ -303,7 +356,7 @@ console.log(value);
                             Frontend workflow
                         </div>
                     </div>
-                    <img src="img/mine/grunt-logo.png">
+                    <img src="img/grunt-logo.png">
                     <h3>GruntJS</h3>
                     <div class="unbrokenline"></div>
                 </div>
@@ -317,7 +370,7 @@ console.log(value);
                             Yes its that badass
                         </div>
                     </div>
-                    <h3>Most active community of plugins for frontend development</h3>
+                    <h3>Awesome plugins for frontend development</h3>
                     <div class="unbrokenline"></div>
                 </div>
             </section>
@@ -364,15 +417,17 @@ grunt.initConfig
                     </div>
                     <pre>
                         <code class="language-javascript">
+# Module file
 ((self) ->
-  class modulName
+  self.fooBar =
     init: ->
-      console.log "this is the first module"
+      console.log "initializing module: fooBar"
+      return
 
     events: ->
-      console.log "these are the events we call"
+      # this is where we will have all the events
+      return
 
-  self.moduleName = modulName
   return
 ) @_namespace = @_namespace or {}
                         </code>
@@ -385,25 +440,12 @@ grunt.initConfig
                 </div>
             </section>
 
-
-
-
-
             <section data-bespoke-state="final" class="intro">
                 <div class="content">
-                    <div class="byline">
-                        <div class="classy">
-                            This has been
-                        </div>
-                    </div>
-                    <h1>Frontend Guidelines</h1>
-                    <div class="byline">
-                        <div class="classy">
-                            by Najam Khan
-                        </div>
-                    </div>
-                    <span>Thank you for listening.</span>
-                    <img src="img/mine/dance.gif" />
+                    <div class="unbrokenline"></div>
+                    <h1>Fin.</h1>
+                    <span>Thank you for listening. Questions?</span>
+                    <img src="img/dance.gif" />
                 </div>
             </section>
 
